@@ -49,12 +49,12 @@ def structureProject(path = os.getcwd(), initializeRequirements = False, \
                         "creating and initializing requirements " + str(err))
                 with open("errorLog.txt", "w") as errorFile:
                     print(err, file = errorFile)
-    else:
-        try:
-            for path in paths:
-                os.makedirs(path)
-                print("Successfully created " + path)
-        except Exception as err:
-            print("err")
-            with open("errorLog.txt", "w") as errorFile:
-                print(err, file = errorFile)
+                    
+    try:
+        for path in paths:
+            os.makedirs(path)
+            print("Successfully created " + path)
+    except Exception as err:
+        print("err")
+        with open("errorLog.txt", "w") as errorFile:
+            print(err, file = errorFile)
